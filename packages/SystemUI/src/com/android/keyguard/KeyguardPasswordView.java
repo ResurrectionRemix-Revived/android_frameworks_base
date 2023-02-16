@@ -39,7 +39,6 @@ import android.widget.TextView.OnEditorActionListener;
 
 import com.android.internal.widget.LockPatternUtils.RequestThrottledException;
 import com.android.internal.widget.TextViewInputDisabler;
-import com.android.keyguard.KeyguardSecurityModel.SecurityMode;
 import com.android.systemui.R;
 
 import java.util.List;
@@ -408,11 +407,6 @@ public class KeyguardPasswordView extends KeyguardAbsKeyInputView
             bytes[i] = (byte) chars.charAt(i);
         }
         return bytes;
-    }
-
-    @Override
-    public SecurityMode getSecurityMode() {
-        return SecurityMode.Password;
     }
 
     private boolean kpvCheckPassword(String entry) {
