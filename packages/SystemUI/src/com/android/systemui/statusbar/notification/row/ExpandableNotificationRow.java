@@ -455,6 +455,8 @@ public class ExpandableNotificationRow extends ActivatableNotificationView
     public void setEntry(@NonNull NotificationEntry entry) {
         mEntry = entry;
         mStatusBarNotification = entry.notification;
+        mImageResolver = new NotificationInlineImageResolver(userContextForEntry(mContext, entry),
+                new NotificationInlineImageCache());
         if (mStatusBarNotification != null) {
             updateAlarmOrCall();
             AppLockManager appLockManager = (AppLockManager) mContext
